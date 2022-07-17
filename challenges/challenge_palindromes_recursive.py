@@ -3,6 +3,7 @@ def is_palindrome_recursive(word, low_index, high_index):
         return False
     return word == reverse(word)
 
+
 def reverse(word):
     if (len(word) <= 1):
         return word

@@ -8,11 +8,17 @@ def is_anagram(first_string, second_string):
     arr1 = []
     arr2 = []
 
-    return quick_sort(list(first_string.lower()), start, end_first, arr1, arr2) == quick_sort(list(second_string.lower()), start, end_second, arr1, arr2)
+    return quick_sort(
+        list(first_string.lower()),
+        start, end_first, arr1, arr2
+        ) == quick_sort(
+        list(second_string.lower()),
+        start, end_second, arr1, arr2
+        )
 
 
-## quick sort e partition elaboradas com auxilio do conteudo do course
-## https://app.betrybe.com/course/computer-science/algoritmos/algoritmos-de-ordenacao-e-busca/29521083-44ea-488d-a74d-216b1ac79b04/conteudos/a8624298-434b-42bf-b713-5f1d3e69859c/algoritmos-que-usam-dividir-e-conquistar/1a3b70b4-7836-4677-b2a2-c26f772672d7?use_case=side_bar
+# quick sort e partition elaboradas com auxilio do conteudo do course
+# https://app.betrybe.com/course/computer-science/algoritmos/algoritmos-de-ordenacao-e-busca/
 def quick_sort(string, start, end, arr1, arr2):
     if start < end:
         p = partition(string, start, end)
@@ -32,8 +38,8 @@ def partition(string, start, end):
 
     for index in range(start, end):
         if string[index] <= pivot:
-          delimiter = delimiter + 1
-          string[index], string[delimiter] = string[delimiter], string[index]
+            delimiter = delimiter + 1
+            string[index], string[delimiter] = string[delimiter], string[index]
 
     string[delimiter + 1], string[end] = string[end], string[delimiter + 1]
 
